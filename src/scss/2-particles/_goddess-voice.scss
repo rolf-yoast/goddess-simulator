@@ -1,0 +1,21 @@
+#goddess-voice {
+	width: 100%;
+	padding: calculateRem(16px);
+	background: $color-black;
+	color: $color-pink;
+	height: 100px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: flex-start;
+
+	div {
+		width: 100%;
+
+		@for $i from 1 through 6 {
+			&:nth-child(1n + #{$i}) {
+				opacity: calc((120 - (#{$i} * 20)) / 100);
+			}
+		}
+	}
+}

@@ -1,0 +1,169 @@
+.grid {
+	display: grid;
+	grid-column-gap: calculateRem(24px);
+	grid-row-gap: calculateRem(24px);
+	list-style: none; // make sure that if the class is applied to a <ul>, it does not have a list-style.
+
+	&__col-2 {
+		grid-template-columns: 1fr 1fr;
+
+		@media screen and (max-width: $page-width-medium) {
+			grid-template-columns: 1fr;
+		}
+
+		@media screen and (min-width: $page-width-medium) {
+			&--reverse {
+				grid-auto-flow: column;
+
+				.media {
+					grid-column: 1 / 2;
+				}
+			}
+		}
+	}
+
+	&__col-2-1 {
+		grid-template-columns: 1fr 1fr 360px;
+
+		&--taxonomy {
+			grid-template-columns: 1fr 112px;
+			grid-template-rows: 1fr;
+		}
+
+		&--true {
+			grid-template-columns: 2fr 1fr;
+		}
+
+		> :first-child {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			max-width: 100%;
+		}
+
+		> :last-child {
+			grid-column-start: 3;
+			grid-column-end: 4;
+
+			@media screen and (max-width: $page-width-medium) {
+				grid-column-start: 1;
+				grid-column-end: 2;
+			}
+		}
+
+		> :first-child:last-child {
+			grid-column-start: 1;
+			grid-column-end: 3;
+
+			@media screen and (max-width: $page-width-medium) {
+				grid-column-start: 1;
+				grid-column-end: 2;
+			}
+		}
+
+		@media screen and (max-width: $page-width-medium) {
+			grid-template-columns: 1fr;
+		}
+
+		&--reverse {
+			grid-auto-flow: column;
+			grid-template-columns: 360px 1fr 1fr;
+
+			> :first-child {
+				grid-column-start: 2;
+				grid-column-end: 4;
+
+				@media screen and (max-width: $page-width-medium) {
+					grid-column-start: 1;
+					grid-column-end: 2;
+				}
+			}
+
+			> :last-child {
+				grid-column-start: 1;
+				grid-column-end: 2;
+
+				@media screen and (max-width: $page-width-medium) {
+					grid-column-start: 1;
+					grid-column-end: 2;
+				}
+			}
+
+			@media screen and (max-width: $page-width-medium) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	&__col-1-2 {
+		grid-template-columns: 1fr 2fr;
+
+		@media screen and (max-width: $page-width-medium) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and (max-width: $page-width-tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__col-3 {
+		grid-template-columns: 1fr 1fr 1fr;
+
+		@media screen and (max-width: $page-width-medium) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and (max-width: $page-width-small) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__col-4 {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+
+		@media screen and (max-width: $page-width-medium) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and (max-width: $page-width-small) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__col-5 {
+		grid-template-columns: repeat(5, 1fr);
+
+		@media screen and (max-width: $page-width-full) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media screen and (max-width: $page-width-small) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__col-6 {
+		grid-template-columns: repeat(6, 1fr);
+
+		@media screen and (max-width: $page-width-full) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media screen and (max-width: $page-width-small) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__col-8 {
+		grid-template-columns: repeat(8, 1fr);
+
+		@media screen and (max-width: $page-width-full) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
+.row {
+	padding: 0 calculateRem(16px);
+	margin-bottom: calculateRem(16px);
+}

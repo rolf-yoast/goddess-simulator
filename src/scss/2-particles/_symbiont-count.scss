@@ -1,0 +1,9 @@
+#symbiont-count {
+	font-weight: 600;
+	font-size: calculateRem(22px);
+	padding: calculateRem(16px);
+
+	span {
+		font-size: calculateRem(32px);
+	}
+}
