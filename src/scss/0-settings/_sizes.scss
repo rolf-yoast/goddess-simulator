@@ -2,3 +2,8 @@ $page-width-full: calculateRem(1012px);
 $page-width-medium: calculateRem(720px);
 $page-width-small: calculateRem(480px);
 $page-width-tablet: 40rem;
+
+.container {
+	width: $page-width-full;
+	margin: 0 auto;
+}

@@ -1,10 +1,17 @@
 import { combineReducers } from "redux";
-import symbionCountReducer from "./symbiontCountReducer";
+
+
+import energyReducer from "./energyReducer";
 import goddessVoiceReducer from "./goddessVoiceReducer";
+import larveaReducer from "./larveaReducer";
+import symbionCountReducer from "./symbiontCountReducer";
 
 const rootReducer = combineReducers({
-  symbionCount: symbionCountReducer,
-  goddessVoice: goddessVoiceReducer
+	energy: energyReducer,
+	goddessVoice: goddessVoiceReducer,
+	larvea: larveaReducer,
+	symbionCount: symbionCountReducer
+  
 })
 
 export default rootReducer;
